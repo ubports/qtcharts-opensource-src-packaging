@@ -1,0 +1,83 @@
+Source: qtcharts-opensource-src
+Section: libs
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
+Uploaders: Simon Quigley <tsimonq2@ubuntu.com>,
+           Dmitry Shachnev <mitya57@debian.org>,
+           Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>
+Build-Depends: debhelper (>= 10.3),
+               dpkg-dev (>= 1.17.14),
+               pkg-kde-tools,
+               qml-module-qtquick2 (>= 5.9.5~),
+               qml-module-qttest (>= 5.9.5~),
+               qtbase5-dev (>= 5.9.5+dfsg~),
+               qtdeclarative5-dev (>= 5.9.5~),
+               xauth,
+               xvfb
+Build-Depends-Indep: libqt5sql5-sqlite (>= 5.9.5+dfsg~) <!nodoc>,
+                     qttools5-dev-tools (>= 5.9.5~) <!nodoc>
+Standards-Version: 4.1.1
+Homepage: http://doc.qt.io/qt-5/qtcharts-index.html
+Vcs-Git: https://anonscm.debian.org/git/pkg-kde/qt/qtcharts.git
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-kde/qt/qtcharts.git
+
+Package: libqt5charts5
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Qt charts shared library
+ Qt Charts module provides a set of easy to use chart components.
+ .
+ This package contains the shared library for Qt Charts.
+
+Package: libqt5charts5-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libqt5charts5 (= ${binary:Version}), qtbase5-dev, ${misc:Depends}
+Description: Qt charts development files
+ Qt Charts module provides a set of easy to use chart components.
+ .
+ This package contains the header development files used for building Qt 5
+ applications using QtCharts.
+
+Package: qml-module-qtcharts
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Qt charts QML module
+ Qt Charts module provides a set of easy to use chart components.
+ .
+ This package provides a QML module for Qt charts.
+
+Package: qtcharts5-examples
+Section: x11
+Architecture: any
+Multi-Arch: same
+Depends: qml-module-qtcharts, ${misc:Depends}, ${shlibs:Depends}
+Description: Qt chart examples
+ Qt Charts module provides a set of easy to use chart components.
+ .
+ This package contains Qt 5 Chart examples.
+
+Package: qtcharts5-doc
+Build-Profiles: <!nodoc>
+Architecture: all
+Section: doc
+Depends: ${misc:Depends}
+Description: Qt charts QCH documentation
+ Qt Charts module provides a set of easy to use chart components.
+ .
+ This package contains the documentation in QCH format, which can be
+ viewed using Qt Assistant from qttools5-dev-tools package.
+
+Package: qtcharts5-doc-html
+Build-Profiles: <!nodoc>
+Architecture: all
+Section: doc
+Depends: ${misc:Depends}
+Description: Qt charts HTML documentation
+ Qt Charts module provides a set of easy to use chart components.
+ .
+ This package contains the documentation in HTML format.

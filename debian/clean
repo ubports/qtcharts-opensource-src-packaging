@@ -1,0 +1,4 @@
+qml/QtCharts/plugins.qmltypes
+qml/QtCharts/qmldir
+src/charts/QtCharts.version.in
+test_root/
